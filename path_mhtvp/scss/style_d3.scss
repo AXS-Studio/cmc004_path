@@ -1,0 +1,51 @@
+@import 'html5reset.scss';
+
+@import 'fonts.scss';
+
+@import 'nice_begin.scss';
+
+$border: #9e9e9e;
+$lGrey: #ccc;
+$xlGrey: #f2f2f2;
+$mGrey: #808080;
+$dGrey: #4d4d4d;
+$grphBord: #b3b3b3;
+$grpGreyMarker: #dbdcde;
+$paleWhite: #f2f9ec;
+$teal: #78bfb7;
+$brush: #1f9c93;
+$commentBlue: #525bf2;
+
+@mixin bord1px($colour) {
+	border: 1px solid $colour;
+}
+
+.uLight {
+	font-family: 'ubuntu_lightregular', sans-serif;
+}
+.uReg {
+	font-family: 'ubunturegular', sans-serif;
+}
+.uMed {
+	font-family: 'ubuntu_lightbold', sans-serif;
+}
+.uBold {
+	font-family: 'ubuntubold', sans-serif;
+}
+.rectStroke {
+	stroke: $grpGreyMarker;
+	stroke: {
+		width: 1;
+		linecap: square;
+	}
+}
+
+@import 'd3.scss';
+
+@import 'visualizer_swatches.scss';
+
+@import 'jquery-ui/ui-lightness.scss';
+
+@import 'jquery.colorpicker.scss';
+
+@import 'nice_end.scss';

@@ -1,0 +1,66 @@
+$columns: 4;
+$cGap: 20px;
+$swPadBot: 0.8em;
+
+div.swatchColumns {
+	width: 100%;
+	margin: $swPadBot 0;
+	padding-left: 62px;
+	-moz-column-count: $columns;
+	-webkit-column-count: $columns;
+	column-count: $columns;
+	-moz-column-gap: $cGap;
+	-webkit-column-gap: $cGap;
+	column-gap: $cGap;
+	
+	h2 {
+		padding-bottom: $swPadBot;
+		font-size: 0.9em;
+		@extend .uBold;
+	}
+
+	ul.swatches {
+		padding-bottom: $swPadBot;
+		list-style: none;
+		
+		li {
+			padding: {
+				top: 0.5em;
+				right: 40px;
+				bottom: 0.5em;
+				left: 30px;
+			}
+			position: relative;
+			
+			&.disabled {
+				opacity: 0.5;
+			}
+			
+			a {
+				width: 20px;
+				height: 20px;
+				@include bord1px($border);
+				background: {
+					image: url(../images/visualizer_colour_select_transparent.gif);
+					repeat: no-repeat;
+					position: left top;
+				}
+				position: absolute;
+				left: 0;
+				top: 4px;
+			}
+			
+			span {
+				font-size: 0.9em;
+				@extend .uReg;
+			}
+			
+		}
+		
+	}
+
+}
+
+.ui-colorpicker, .ui-dialog.ui-colorpicker {
+	font-size: 0.7em;
+}

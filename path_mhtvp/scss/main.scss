@@ -1,0 +1,23 @@
+article.mainBox {
+	width: 420px;
+	height: 28px;
+	@include absPosCenter(14px, 210px);
+	// background-color: pink;
+	
+	p {
+		padding: {
+			top: 10px;
+			bottom: 5px;
+			left: 40px;
+		}
+		background: url(../images/MHT_logo_icon.png) no-repeat left 4px;
+		@extend .uReg;
+		
+		strong {
+			@extend .uBold;
+			font-weight: normal;
+		}
+		
+	}
+	
+}

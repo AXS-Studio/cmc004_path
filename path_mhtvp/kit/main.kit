@@ -1,0 +1,35 @@
+<?php
+/**
+* main.php
+* main landing page for PATH
+*/
+session_start();
+ 
+$title = 'PATH';
+
+include('inc/head.inc.php');
+?>
+	<body>
+<?php
+include('inc/header.inc.php');
+?>
+		<div class="minHeight" id="mh">
+			<article class="mainBox">
+				<p><strong>PATH Data Visualization</strong><br>
+            		Coming soon to a browser near you.</p>
+			</article>
+			<!-- end mainBox -->
+		</div>
+		<!-- end minHeight -->
+<?php
+include('inc/footer.inc.php');
+include('inc/scripts.inc.php');
+?>
+		<script>
+			$(document).ready(function() {
+				$('html').removeClass('no-js').addClass('js');
+				MinHeight.init();
+			});
+		</script>
+	</body>
+</html>

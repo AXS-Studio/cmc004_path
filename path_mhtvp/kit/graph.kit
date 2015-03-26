@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 graph</title>
+		<link rel="stylesheet" media="screen" href="../css/style_d3.css">
+	</head>
+	
+	<body>
+		<div class="svgWrap" id="svgParent"></div>
+		<!-- <script src="../js/d3_initialData.js"></script> -->
+		<!-- <script src="../js/min/d3test-min.js"></script> -->
+		<script src="../js/d3.js"></script>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery-ui-1.10.2.custom.js"></script>
+		<script src="../js/jquery.colorpicker.js"></script>
+		<script src="../js/d3graph.js"></script>
+		<script>
+			$(document).ready(function() {
+				/*d3.json('../json/fallingAsleep.json', function(data) {
+					window.alert(data.length);
+				});*/
+				D3graph.init();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,622 @@
+@import 'html5reset.scss';
+
+@import 'fonts.scss';
+
+@import 'jquery-ui/jquery.ui.core.scss';
+
+@import 'jquery-ui/jquery.ui.datepicker.scss';
+
+@import 'jquery-ui/jquery.ui.spinner.scss';
+
+@import 'jquery-ui/jquery.ui.theme.scss';
+
+@import 'jquery.ui.timepicker.scss';
+
+@import 'nice_begin.scss';
+
+$background: #e5f3da;
+$green: #7cc144;
+$lightGreen: #ebf6e3;
+$blue: #0b67b1;
+$border: #9e9e9e;
+$lGrey: #ccc;
+$xlGrey: #f2f2f2;
+$mGrey: #808080;
+$dGrey: #4d4d4d;
+$grphBord: #b3b3b3;
+$grpGreyMarker: #dbdcde;
+$paleWhite: #f2f9ec;
+$red: #f00;
+$bgAlert: #ffd2d2;
+$teal: #78bfb7;
+$brush: #339999;
+$commentBlue: #525bf2;
+$commentAlpha: rgba(82, 91, 242, 0.75);
+$noteAlpha: rgba(93, 181, 221, 0.75);
+$range1BlueO: rgba(90, 171, 226, 0.7);
+$range2PurpO: rgba(82, 82, 204, 0.7);
+$range1Blue: #f0f9ff;
+$range2Purp: #e6edff;
+
+@mixin absPosCenter($margT, $margL) {
+	margin: {
+		top: 0 - $margT;
+		right: 0;
+		bottom: 0;
+		left: 0 - $margL;
+	}
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+@mixin bgImage100($img) {
+	background-image: url($img);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+@mixin bord1px($colour) {
+	border: 1px solid $colour;
+}
+
+.uLight {
+	font: {
+		weight: normal;
+		family: 'ubuntu_lightregular', sans-serif;
+	}
+}
+.uReg {
+	font: {
+		weight: normal;
+		family: 'ubunturegular', sans-serif;
+	}
+}
+.uMed {
+	font: {
+		weight: normal;
+		family: 'ubuntu_lightbold', sans-serif;
+	}
+}
+.uBold {
+	font: {
+		weight: normal;
+		family: 'ubuntubold', sans-serif;
+	}
+}
+.rectStroke {
+	stroke: $grpGreyMarker;
+	stroke: {
+		width: 1;
+		linecap: square;
+	}
+}
+
+.o0 {
+	opacity: 0.0;
+}
+.o1 {
+	opacity: 1.0;
+}
+
+.genFont {
+	font-size: 0.9em;
+	line-height: 1.3em;
+}
+/*.botMarg {
+	margin: 0 0 0.3em;
+}*/
+
+.formInputs {
+	margin-bottom: 0;
+	padding: {
+		top: 0.7em;
+		bottom: 0.7em;
+	}
+	font-size: 0.9em;
+	border: {
+		color: $border;
+		radius: 6px;
+	}
+}
+
+.formButton {
+	margin-top: 0.6em;
+	padding: {
+		right: 11px;
+		left: 11px;
+	}
+	text-align: left;
+	@extend .formInputs;
+	@extend .uMed;
+	color: $dGrey;
+	text-shadow: 1px 1px 0 #fff;
+	@include bord1px($border);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZmRmZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkNmQ4ZDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(253, 253, 253, 1.0) 0%, rgba(214, 216, 217, 1.0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 1.0)), color-stop(100%, rgba(214, 216, 217, 1.0)));
+	
+	&:hover {
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q2ZDhkOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGZkZmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+		background: -moz-linear-gradient(top, rgba(214, 216, 217, 1.0) 0%, rgba(253, 253, 253, 1.0) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(214, 216, 217, 1.0)), color-stop(100%, rgba(253, 253, 253, 1.0)));
+	}
+	
+	&:active {
+		position: relative;
+		left: 2px;
+		top: 2px;
+	}
+	
+	html.ie9 & {
+		filter: none;
+	}
+	
+}
+
+.ulNav {
+	margin: 0;
+	list-style:  none;
+}
+
+body {
+	min-width: 1330px;
+	font-size: 100%;
+	line-height: 1em;
+	@extend .uLight;
+	color: #000;
+	background-color: $background;
+}
+
+div#wrapper {
+	min-width: 1330px;
+	position: relative;
+}
+
+p {
+	@extend .genFont;
+	
+	&#created {
+		margin-top: 1em;
+	}
+	
+	&.alert {
+		color: $red;
+		-moz-transition: opacity 0.5s ease-out;
+		-webkit-transition: opacity 0.5s ease-out;
+		transition: opacity 0.5s ease-out;
+	}
+	
+}
+
+a {
+	color: $blue;
+}
+
+div.minHeight {
+	position: relative;
+	
+	body.login & {
+		position: static;
+	}
+	
+}
+
+article.cedArt {
+	margin-top: 75px;
+	display: inline-block;
+	
+	div.cedfCont {
+		display: inline-block;
+		
+		h2 {
+			margin-bottom: 0.8em;
+		}
+		
+	}
+	
+}
+
+article.acpaArt, article.cqArt {
+	width: 800px;
+	margin: {
+		right: auto;
+		left: auto;
+	}
+	
+	div.floatCont {
+		width: 500px;
+		float: right;
+	}
+		
+	h2 {
+		margin-bottom: 0.4em;
+		padding-top: 75px;
+	}
+	
+}
+
+article.cqArt {
+
+	form {
+		overflow: visible;
+		
+		fieldset {
+			overflow: visible;
+			
+			div.patientSelect {
+				position: absolute;
+				left: -300px;
+				top: 8px;
+				
+				& + h3 {
+					padding-bottom: 0.5em;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+form {
+	
+	article.cedArt div.cedfCont & {
+		overflow: visible;
+	}
+	
+	fieldset {
+		margin: 0;
+		padding: 0;
+		border-width: 0;
+		position: relative;
+	
+		article.cedArt div.cedfCont & {
+			overflow: visible;
+		}
+		
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"], input[type="time"], input[type="date"], input.date, textarea {
+			width: 245px;
+			padding: {
+				top: 3px;
+				right: 6px;
+				bottom: 3px;
+				left: 6px;
+			}
+			font-size: 0.9em;
+			@extend .uLight;
+			color: #000;
+			@include bord1px($border);
+			
+			&.number {
+				width: 32px;
+			}
+			
+			article.cqArt & {
+				float: none;
+			}
+			
+		}
+		
+		span.ui-spinner {
+			border-color: $border;
+			border-radius: 0;
+			
+			input {
+				padding: 1px 1px 0;
+				font-size: 1em;
+				border-width: 0;
+			}
+			
+		}
+			
+		textarea {
+			padding: {
+				top: 2%;
+				bottom: 2%;
+			}
+			border-radius: 0;
+		}
+		
+		div.fRight {
+			float: right;
+			display: inline-block;
+		}
+		
+		input[type="checkbox"] {
+			border-color: $border;
+		}
+		
+		label {
+			font-size: 0.9em;
+		}
+			
+		input[type="submit"], input[type="button"], button {
+			@extend .formButton;
+			
+			/*&#subDelete, &#subEmail, &#subEditAccess, &#subRevert {
+				opacity: 0.5;
+			}*/
+			
+			&.disabled {
+				opacity: 0.5;
+			}
+			
+		}
+		
+		button {
+			position: relative;
+			top: 5px;
+			
+			&:active {
+				top: 7px;
+			}
+			
+		}
+		
+		div.row {
+			padding-bottom: 0.5em;
+			position: relative;
+			
+			article.cqArt & {
+				width: 100%;
+				display: inline-block;
+				float: none;
+				
+				span {
+					font-size: 0.9em;
+				}
+				
+				&.tod {
+					margin-top: 0.5em;
+					
+					p.alert {
+						padding-left: 87px;
+					}
+					
+					& > label {
+						position: absolute;
+						left: 0;
+						top: 5px;
+					}
+					
+					div.row {
+						margin-left: 87px;
+					
+						input {
+							width: 86px;
+						}
+					
+					}
+					
+				}
+				
+				input[type="date"], input.date {
+					width: 135px;
+				}
+				
+				input[type="radio"] + label {
+					margin-right: 0.5em;
+				}
+				
+			}
+			
+			label {
+				text-align: right;
+				position: absolute;
+				top: 7px;
+				
+				article.clinician & {
+					width: 90px;
+					left: -100px;
+				}
+				
+				article.patient & {
+					width: 145px;
+					left: -155px;
+				}
+				
+				article.cqArt & {
+					position: static;
+					text-align: left;
+				}
+				
+				article.cqArt & {
+					margin-right: 5px;
+						
+					&.noRightMarg {
+						margin-right: 0;
+					}
+					
+				}
+				
+			}
+			
+			input[type="checkbox"] {
+				position: relative;
+				top: 5px;
+			}
+			
+			&.select {
+				padding: {
+					top: 0.3em;
+					bottom: 0.8em;
+				}
+				
+				label {
+					top: 8px;
+				}
+				
+			}
+			
+			&.submit {
+				padding-top: 0.3em;
+			}
+					
+			table {
+				width: 100%;
+				
+				th, td {
+					padding: {
+						top: 4px;
+						right: 6px;
+						bottom: 4px;
+						left: 6px;
+					}
+					@extend .uLight;
+					@extend .genFont;
+				}
+				
+				th {
+					text-align: left;
+					@extend .uReg;
+					background-color: #cfe9bf;
+				}
+				
+			}
+			
+		}
+		
+		div.borders {
+			padding-bottom: 0.8em;
+			@include bord1px(#000);
+			border-width: 1px 0;
+			
+			article.cqArt & {
+				padding: {
+					top: 0.5em;
+					bottom: 0;
+				}
+				border-top-width: 0;
+				
+				&:first-child {
+					border-top-width: 1px;
+				}
+				
+			}
+			
+			& > div {
+				width: 35%;
+				float: left;
+				
+				& + div {
+					width: 30%;
+					
+					& + div {
+						width: 35%;
+					}
+					
+				}
+			
+			// div#qfRows {
+				
+				h3 {
+					margin: {
+						top: 1.4em;
+						bottom: 0.7em;
+					}
+					font-size: 0.9em;
+					
+					article.cqArt & {
+						margin-top: 0;
+					}
+					
+				}
+				
+				a.btnAssignment {
+					width: 136px;
+					height: 197px;
+					margin-top: 0.9em;
+					background: url(../images/button_assignment_cropped.png) no-repeat left top;
+					
+					&:hover {
+						background-position: -136px top;
+					}
+					
+				}
+				
+				div.row {
+					
+					input[type="checkbox"] {
+						position: absolute;
+						left: 0;
+						top: -1px;
+					}
+					
+					label {
+						/*margin: {
+							left: 22px;
+						}*/
+						text-align: left;
+						position: static;
+					}
+					
+					td input[type="checkbox"] {
+						position: static;
+					}
+					
+				}
+				
+			}
+			
+			/*div#qfRows {
+				width: auto;
+				float: none;
+				background-color: pink;
+				
+				div.row {
+					width: 100%;
+				}
+				
+			}*/
+			
+			div#patientChecklistDiv, div#clinicianChecklistDiv {
+				
+				div.row {
+					padding-left: 25px;
+				}
+				
+			}
+			
+			h3 {
+				
+				article.cqArt & {
+					padding-top: 0.5em;
+					font-size: 0.9em;
+					@extend .uMed;
+				}
+				
+			}
+			
+		}
+
+	}
+	
+}
+
+
+
+
+@import 'header.scss';
+
+@import 'login.scss';
+
+@import 'main.scss';
+
+@import 'terms.scss';
+
+@import 'footer.scss';
+
+@import 'd3.scss';
+
+@import 'visualizer_swatches.scss';
+
+@import 'jquery-ui/ui-lightness.scss';
+
+@import 'jquery.colorpicker.scss';
+
+@import 'sessionSelect.scss';
+
+@import 'nice_end.scss';

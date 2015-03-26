@@ -1,0 +1,59 @@
+header {
+	height: 81px;
+	background-color: #fff;
+	position: relative;
+	
+	h1 {
+		font: {
+			weight: normal;
+			size: 1.5em;
+		}
+		color: $blue;
+		position: absolute;
+		left: 223px;
+		top: 33px;
+		
+		strong {
+			font-weight: normal;
+			@extend .uBold;
+		}
+		
+	}
+	
+	form {
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+		top: 40px;
+		@extend .uReg;
+		
+		label {
+			margin-right: 10px;
+			padding-top: 0.2em;
+			float: left;
+			@extend .genFont;
+		}
+		
+		select {
+			margin-right: 20px;
+			float: left;
+			font-size: 0.9em;
+		}
+		
+		a {
+			padding-top: 0.2em;
+			display: inline-block;
+			@extend .genFont;
+		}
+		
+	}
+	
+	img {
+		margin: {
+			top: 17px;
+			left: 17px;
+		}
+		border-right: 1px solid $border;
+	}
+	
+}

@@ -1,0 +1,83 @@
+article.loginBox {
+	width: 350px;
+	height: 214px;
+	@include absPosCenter(107px, 175px);
+	// background-color: pink;
+
+	h2 {
+		margin-bottom: 0.5em;
+		font: {
+			weight: normal;
+			size: 1.5em;
+		}
+		left: 223px;
+		top: 33px;
+		
+		strong {
+			font-weight: normal;
+			@extend .uBold;
+			color: $blue;
+		}
+		
+	}
+	
+	p {
+		margin-bottom: 0.3em;
+	}
+
+	form {
+		
+		fieldset {
+			padding-bottom: 1px;
+			
+			input[type="text"], input[type="password"], textarea {
+				width: 332px;
+				padding: {
+					right: 8px;
+					left: 8px;
+				}
+				@extend .formInputs;
+				@extend .uReg;
+			
+				&.top {
+					border-radius: 6px 6px 0 0;
+				}
+				
+				&.bottom {
+					margin-top: 0;
+					border: {
+						top-width: 0;
+						radius: 0 0 6px 6px;
+					}
+					
+				}
+			
+			}
+			
+			div.fRight {
+				margin-top: 1.3em;
+				
+				label {
+					position: relative;
+					top: 0.1em;
+				}
+				
+			}
+			
+			input[type="submit"] {
+				width: 110px;
+			}
+			
+		}
+		
+	}
+	
+	p.forgot {
+		margin: {
+			top: 2.5em;
+			bottom: 0;
+		}
+		text-align: center;
+	}
+	
+}

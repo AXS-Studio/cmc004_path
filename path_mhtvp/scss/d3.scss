@@ -1,0 +1,556 @@
+article.grapher {
+	// width: 1098px;
+	width: 1160px;
+	margin: 0 auto;
+	
+	form#dataVisForm {
+		width: 100%;
+		margin-bottom: 10px;
+		
+		fieldset {
+			width: 50%;
+			margin-top: 18px;
+			float: left;
+			
+			label {
+				margin-right: 10px;
+			}
+			
+		}
+		
+	}
+	
+}
+
+div.containerForGraphs {
+	position: relative;
+}
+
+.inlinePopup {
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	
+	img.arrow {
+		position: absolute;
+		bottom: -18px;
+	}
+	
+	h6 {
+		color: #fff;
+		font: {
+			size: 0.8em;
+			weight: normal;
+		}
+		@extend .uLight;
+		position: absolute;
+		top: 1px;
+	}
+	
+	div.scroll, form {
+		width: 160px - 10;
+		height: 160px - 5 - 5 - 5 - 7;
+		position: absolute;
+		left: 5px;
+		top: 5px + 7 + 5;
+	}
+	
+	div.scroll {
+		overflow-y: auto;
+		background-color: #fff;
+		
+		div.content {
+			padding: 0.3em;
+			@extend .uLight;
+			
+			p {
+				font-size: 0.9em;
+				line-height: 1.3em;
+				@extend .uLight;
+			}
+			
+		}
+		
+	}
+	
+	form {
+		
+		fieldset {
+			
+			textarea {
+				width: 160px - 10;
+				height: 160px - 5 - 5 - 5 - 7;
+				padding: 0.3em;
+				font-size: 0.9em;
+				line-height: 1.3em;
+				@extend .uLight;
+				resize: none;
+				background-color: #fff;
+			}
+			
+		}
+		
+	}
+	
+	a {
+		width: 7px;
+		position: absolute;
+		
+		&.btnCloseCI {
+			height: 7px;
+			background-image: url(../images/comments_box_close.png);
+			right: 5px;
+			top: 5px;
+		}
+		
+		&.btnCloseDelete {
+			height: 9px;
+			background-image: url(../images/trash_can_final.png);
+			left: 5px;
+			top: 4px;
+		}
+		
+	}
+	
+}
+
+$btnHeight: 30px;
+$negBtnHeight: 0 - $btnHeight;
+	
+a.topBtn {
+	width: 37px;
+	height: $btnHeight;
+	position: absolute;
+	top: 0;
+	
+	&:hover {
+		background-position: left $negBtnHeight;
+	}
+	
+	&.btnMa {
+		background-image: url(../images/dataVis_button_ma.gif);
+		right: 55px;
+		
+		div.containerForGraphs div.movingAverage & {
+			background-position: left $negBtnHeight;
+			
+			&:hover {
+				background-position: left 0;
+			}
+			
+		}
+		
+	}
+	
+	&.btnIntegrals {
+		background-image: url(../images/dataVis_button_graph.gif);
+		right: 0;
+		
+		div.containerForGraphs div.integrals & {
+			background-position: left $negBtnHeight;
+			
+			&:hover {
+				background-position: left 0;
+			}
+			
+		}
+		
+	}
+	
+}
+
+div.integralData {
+	min-width: 80px;
+	padding: 5px 10px;
+	@include bord1px($grphBord);
+	background-color: #fff;
+	position: absolute;
+	right: 5px;
+	top: 45px;
+	display: none;
+	
+	div.containerForGraphs div.integrals & {
+		display: block;
+	}
+	
+	p {
+		text-align: center;
+	}
+	
+	table {
+		min-width: 80px;
+		
+		tbody tr td {
+			padding: {
+				top: 2px;
+				bottom: 2px;
+			}
+		
+			&:first-child {
+				width: 15px;
+				padding-right: 5px;
+				
+				div {
+					height: 2px;
+					overflow: hidden;
+					position: relative;
+					top: 8px;
+				}
+				
+			}
+			
+			&:last-child {
+				font-size: 0.8em;
+				line-height: 1em;
+				@extend .uLight;
+				text-align: right;
+			}
+			
+		}
+		
+	}
+	
+}
+
+div.svgWrap {
+	width: 1098px;
+	height: 307px;
+	margin: {
+		top: 25px;
+		left: 62px;
+	}
+	padding-top: 14px;
+	position: relative;
+	
+	&#svgParent {
+		height: 350px;
+		padding-top: 40px;
+		
+		p.lbl {
+			width: 135px;
+			text-align: right;
+			position: absolute;
+			left: -145px;
+			
+			&.lblCn {
+				top: 292px;
+			}
+			
+			&.lblPc {
+				top: 316px;
+			}
+			
+		}
+		
+		div.clinicianNote {
+			width: 18px;
+			height: 28px;
+			overflow: hidden;
+			background: {
+				repeat: no-repeat;
+				position: left top;
+			}
+			position: absolute;
+			left: 12px;
+			top: 285px;
+			
+			&:hover {
+				cursor: pointer;
+			}
+			
+			&.cnStart {
+				background-image: url(../images/visualizer_clinician_note_add.png);
+			}
+			
+			&.cnMark {
+				background-image: url(../images/visualizer_clinician_note.png);
+			}
+			
+		}
+		
+	}
+	
+	h2 {
+		font: {
+			size: 0.9em;
+			weight: normal;
+		}
+		text-transform: uppercase;
+		position: absolute;
+		left: 33px;
+		top: 18px;
+	}
+	
+	div.commentInline {
+		@extend .inlinePopup;
+		margin-left: -18px;
+		background-color: $commentAlpha;
+		top: 140px;
+		
+		img.arrow {
+			left: 12px;
+		}
+		
+		h6 {
+			width: 140px;
+			left: 5px;
+		}
+		
+	}
+	
+	div.noteInline {
+		@extend .inlinePopup;
+		height: 176px;
+		margin-left: -48px;
+		background-color: $noteAlpha;
+		top: 90px;
+		
+		img.arrow {
+			left: (160px / 2) - 6;
+		}
+		
+		h5 {
+			width: 132px;
+			color: #fff;
+			font: {
+				size: 0.8em;
+				weight: normal;
+			}
+			@extend .uLight;
+			position: absolute;
+			left: 15px;
+			top: 1px;
+		}
+		
+		h6 {
+			width: 132px;
+			left: 15px;
+			top: 15px;
+		}
+		
+		form {
+			top: 32px;
+		}
+		
+	}
+	
+}
+
+svg {
+	font-size: 12px;
+	@extend .uReg;
+	
+	g {
+		
+		path {
+			fill: none;
+			stroke: #f00;
+			
+			&.domain, &.dataMa {
+				display: none;
+			}
+			
+			&.dataMa {
+				stroke-width: 2;
+				stroke-dasharray: 6,2;
+			}
+			
+			div.containerForGraphs div.movingAverage &.dataMa {
+				display: inline;
+			}
+			
+			div.containerForGraphs div.movingAverage &.dataPath {
+				opacity: 0.25;
+			}
+			
+		}
+		
+		&.bgFocus {
+			
+			rect {
+				fill: #fff;
+				@extend .rectStroke;
+			}
+			
+		}
+		
+		rect.mask {
+			fill: $background;
+		}
+		
+		&#focus {
+			
+			rect.comment {
+				fill: $commentBlue;
+				cursor: pointer;
+			}
+			
+			rect.mask {
+				fill: $xlGrey;
+			}
+			
+			g {
+				
+				&#r-1 {
+					
+					rect.extent {
+						fill: $range1BlueO
+					}
+					
+				}
+				
+				&#r-2 {
+					
+					rect.extent {
+						fill: $range2PurpO
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		&.fgFocus {
+			
+			rect {
+				fill: none;
+				@extend .rectStroke;
+			}
+			
+		}
+		
+		&.axis {
+			
+			path, line {
+				fill: none;
+				stroke: #000;
+				shape-rendering: crispEdges;
+			}
+			
+			&.x, &.y {
+				
+				g.tick {
+					
+					line {
+						stroke: #000;
+						opacity: 0.125;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		&.bgContext {
+			
+			rect {
+				fill: none;
+			}
+			
+		}
+		
+		&#context {
+			
+			g {
+				
+				&.x {
+					
+					g.tick {
+						
+						line {
+							display: none;
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		&.brush {
+			
+			text {
+				font-size: 20px;
+				fill: rgba(0, 0, 0, 0.25);
+			}
+			
+			rect {
+				
+				&.extent {
+					// stroke: #fff;
+					fill: $brush;
+					fill-opacity: 0.4;
+					shape-rendering: crispEdges;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	&#parentSvg {
+		border: 2px solid $grphBord;
+		background-color: $xlGrey;
+	
+		/*g {
+			
+			&.r1back {
+				
+				rect {
+					fill: $range1Blue;
+				}
+				
+			}
+			
+			&.r2back {
+				
+				rect {
+					fill: $range2Red;
+				}
+				
+			}
+			
+		}*/
+		
+		image {
+			
+			&#cnAdd {
+				cursor: pointer;
+			}
+			
+		}
+		
+	}
+	
+	&#range1Svg {
+		
+		g.bgColour {
+			
+			rect {
+				fill: $range1BlueO;
+				fill-opacity: 0.4;
+			}
+			
+		}
+		
+	}
+	
+	&#range2Svg {
+		
+		g.bgColour {
+			
+			rect {
+				fill: $range2PurpO;
+				fill-opacity: 0.4;
+			}
+			
+		}
+		
+	}
+	
+}

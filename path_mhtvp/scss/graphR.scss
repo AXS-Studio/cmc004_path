@@ -1,0 +1,87 @@
+$graphWidth: 900px;
+$canvasPadding: 30px;
+$canvasWidth: $graphWidth + ($canvasPadding * 2);
+$canvasHeight: 260px;
+$ccHeight: 45px;
+$mrHeight: 25px;
+$mrPadding: 5px;
+
+$mgBoxShadow: 2px 2px 3px rgba(102, 102, 102, 0.5) inset;
+
+.mgCommon {
+	width: $graphWidth;
+	-webkit-box-shadow: $mgBoxShadow;
+	box-shadow: $mgBoxShadow;
+	position: absolute;
+	left: $canvasPadding;
+}
+.markerCommon {
+	width: 2px;
+	margin-left: -1px;
+	position: absolute;
+	bottom: 0;
+}
+
+canvas {
+	background-color: transparent;
+}
+
+div.masterGraph {
+	width: $canvasWidth;
+	height: $canvasHeight + $ccHeight + $mrHeight;
+	border: 2px solid $mGrey;
+	background-color: $xlGrey;
+	position: relative;
+	
+	div.commentsCont {
+		@extend .mgCommon;
+		height: $ccHeight;
+		top: $canvasHeight;
+		
+		div.dMarker {
+			@extend .markerCommon;
+			height: 15px;
+			overflow: hidden;
+			background-color: pink;
+			// display: none;
+		}
+		
+		a.cMarker {
+			@extend .markerCommon;
+			height: 20px;
+			overflow: visible;
+			background-color: $commentBlue;
+		}
+		
+	}
+	
+	div.masterRange {
+		@extend .mgCommon;
+		height: $mrHeight;
+		overflow: visible;
+		background-color: $teal;
+		top: $canvasHeight + $ccHeight;
+		
+		p {
+			padding-top: 0.5em;
+			font-size: 0.7em;
+			@extend .uReg;
+			position: absolute;
+			top: 0;
+			
+			&:first-child {
+				padding-left: $mrPadding;
+			}
+			
+			&:last-child {
+				padding-right: $mrPadding;
+				text-align: right;
+			}
+			
+		}
+		
+	}
+	
+}
+
+// NOTE: Some of the above styles and values can be amagamated to avoid repetitive code
