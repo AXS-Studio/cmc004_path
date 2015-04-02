@@ -5,7 +5,7 @@
 */
 session_start();
  
-$title = 'PATH-MHTV';
+$title = 'PATH-ANX';
 
 include('inc/head.inc.php');
 ?>

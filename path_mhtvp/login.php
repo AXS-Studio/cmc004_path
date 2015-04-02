@@ -13,7 +13,7 @@ if (checkLogin()) {
 	exit;
 }
 
-$title = 'Welcome to PATH-MHTV';
+$title = 'Welcome to PATH-ANX';
 
 include('inc/head.inc.php');
 
@@ -31,7 +31,7 @@ if (isset($_SESSION['error'])) {
 			</header>
 			<div class="minHeight" id="mh">
 				<article class="loginBox">
-					<h2>Welcome to <strong>PATH-MHTV</strong></h2>
+					<h2>Welcome to <strong>PATH-ANX</strong></h2>
 					<p class="alert o0" id="alert-user" style="display: none;">Your <strong>SHSC ID</strong> is incorrect. Please re-enter it.</p>
 					<p class="alert o0" id="alert-pass" style="display: none;">Your <strong>password</strong> is incorrect. Please re-enter it.</p>
 					<p class="alert o0" id="alert-dontMatch" style="display: none;">Your <strong>SHSC ID</strong> and <strong>password</strong> don’t match. Please try again.</p>

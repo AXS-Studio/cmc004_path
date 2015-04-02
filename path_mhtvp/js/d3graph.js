@@ -1425,7 +1425,7 @@ var D3graph = (function() {
 					// window.alert('Aggregate Score');
 					$('#scs').append('<h2>Aggregate Scores</h2>\
 						<ul class="swatches" id="swtchs-aggregateScore">\
-							<li class="disabled"><a href="#" title="Change QIDS Score’s colour" id="swatch-SCORE_0"></a> <span>QIDS Score</span></li>\
+							<li class="disabled"><a href="#" title="Change Score colour" id="swatch-SCORE_0"></a> <span>Score</span></li>\
 						</ul>');
 				}
 				

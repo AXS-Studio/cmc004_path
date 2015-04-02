@@ -73,11 +73,11 @@ function convertAnswer($input, $questionType){
 		$arr = explode("_", $input, 2); //eg. explode Anchor_0 at "_"
 		$input = (int) $arr[1]; //take the second item
 
-		if ($questionType=='OTHER')
+		if ($questionType=='MC2')
 		return 100*($input); //2 choices for OTHER - 0 or 100
-		else if ($questionType=='ASRM')
+		else if ($questionType=='MC5')
 		return 100*($input)/4; //5 choices for ASRM - 0, 25, 50, 75, 100
-		else if ($questionType=='QIDS')
+		else if ($questionType=='MC4')
 		return 100*($input)/3; //4 choices for QIDS - 0, 33.33, 66.66, 100		
 	}
 }

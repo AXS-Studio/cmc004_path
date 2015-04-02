@@ -33,22 +33,36 @@ if(isset($_POST['subCustomize'])){
 	
 	$questions = array();
 	$questionsInfreq = array();
-	for ($i = 0; $i <= 11; $i++){
-		$questions['QIDS_'.$i]=$_POST['QIDS_'.$i];
-		$questionsInfreq['QIDS_'.$i] = $_POST['QIDS_'.$i.'_Infreq'];
+	for ($i = 0; $i <= 14; $i++){
+		$questions['MC5_'.$i]=$_POST['MC5_'.$i];
+		$questionsInfreq['MC5_'.$i] = $_POST['MC5_'.$i.'_Infreq'];
 	}
-	for ($i = 0; $i <= 4; $i++){
-		$questions['ASRM_'.$i]=$_POST['ASRM_'.$i];
-		$questionsInfreq['ASRM_'.$i] = $_POST['ASRM_'.$i.'_Infreq'];
+	for ($i = 0; $i <= 0; $i++){
+		$questions['MC2_'.$i]=$_POST['MC2_'.$i];
+		$questionsInfreq['MC2_'.$i] = $_POST['MC2_'.$i.'_Infreq'];
 	}
-	for ($i = 0; $i <= 1; $i++){
-		$questions['OTHER_'.$i]=$_POST['OTHER_'.$i];
-		$questionsInfreq['OTHER_'.$i] = $_POST['OTHER_'.$i.'_Infreq'];
-	}
-	for ($i = 0; $i <= 8; $i++){
+	for ($i = 0; $i <= 23; $i++){
 		$questions['VAS_'.$i]=$_POST['VAS_'.$i];
 		$questionsInfreq['VAS_'.$i] = $_POST['VAS_'.$i.'_Infreq'];
 	}
+
+	// -- Old arrays for reference --
+	// for ($i = 0; $i <= 11; $i++){
+	// 	$questions['QIDS_'.$i]=$_POST['QIDS_'.$i];
+	// 	$questionsInfreq['QIDS_'.$i] = $_POST['QIDS_'.$i.'_Infreq'];
+	// }
+	// for ($i = 0; $i <= 4; $i++){
+	// 	$questions['ASRM_'.$i]=$_POST['ASRM_'.$i];
+	// 	$questionsInfreq['ASRM_'.$i] = $_POST['ASRM_'.$i.'_Infreq'];
+	// }
+	// for ($i = 0; $i <= 1; $i++){
+	// 	$questions['OTHER_'.$i]=$_POST['OTHER_'.$i];
+	// 	$questionsInfreq['OTHER_'.$i] = $_POST['OTHER_'.$i.'_Infreq'];
+	// }
+	// for ($i = 0; $i <= 8; $i++){
+	// 	$questions['VAS_'.$i]=$_POST['VAS_'.$i];
+	// 	$questionsInfreq['VAS_'.$i] = $_POST['VAS_'.$i.'_Infreq'];
+	// }
 	
 	//Delete previous question settings
 	global $mysqli;

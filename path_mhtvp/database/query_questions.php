@@ -6,10 +6,9 @@ $jsonArray = array(); //Final array returned for AJAX
 
 $bus = array();
 
-$ASRMArray = array();
-$QIDSArray = array();
+$MC5Array = array();
+$MC2Array = array();
 $VASArray = array();
-$OTHERArray = array();
 $AGGREGATEArray = array();
 
 global $mysqli;
@@ -30,14 +29,11 @@ if ($result = $mysqli->query($q)){
 		if ($questionType == 'VAS'){
 			array_push($VASArray, $bus);
 		}
-		else if ($questionType == 'ASRM'){
-			array_push($ASRMArray, $bus);
+		else if ($questionType == 'MC5'){
+			array_push($MC5Array, $bus);
 		}
-		else if ($questionType == 'QIDS'){
-			array_push($QIDSArray, $bus);
-		}
-		else if ($questionType == 'OTHER'){
-			array_push($OTHERArray, $bus);
+		else if ($questionType == 'MC2'){
+			array_push($MC2Array, $bus);
 		}
 		else if ($questionType == 'SCORE'){
 			array_push($AGGREGATEArray, $bus);
@@ -47,13 +43,13 @@ if ($result = $mysqli->query($q)){
 	$result->free();
 	
 	//Produce finalized json array for output
-	$bus["category"] = "ASRM";
-	$bus["type"] = $ASRMArray;
+	$bus["category"] = "MC5";
+	$bus["type"] = $MC5Array;
 	array_push($jsonArray, $bus);
 	unset($bus);
 	
-	$bus["category"] = "QIDS";
-	$bus["type"] = $QIDSArray;
+	$bus["category"] = "MC2";
+	$bus["type"] = $MC2Array;
 	array_push($jsonArray, $bus);
 	unset($bus);
 	
@@ -61,14 +57,9 @@ if ($result = $mysqli->query($q)){
 	$bus["type"] = $VASArray;
 	array_push($jsonArray, $bus);
 	unset($bus);
-	
-	$bus["category"] = "OTHER";
-	$bus["type"] = $OTHERArray;
-	array_push($jsonArray, $bus);
-	unset($bus);
 		
 	$AGGREGATEArray["id"] = "SCORE_0";
-	$AGGREGATEArray["name"] = "QIDS Score";
+	$AGGREGATEArray["name"] = "Score";
 	
 	$bus["category"] = "Aggregate Scores";
 	$bus["type"] = $AGGREGATEArray;

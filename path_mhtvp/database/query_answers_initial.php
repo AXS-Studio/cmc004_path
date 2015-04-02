@@ -13,19 +13,20 @@ $clinicianID=$_REQUEST["clinicianID"];
 
 $sessionName=$_REQUEST["sessionName"];
 
-$defaultQuestionArray = array("QIDS_0","SCORE_0","VAS_0","ASRM_0"); //Array containing questionIDs to be queried
+$defaultQuestionArray = array("MC5_0","MC2_0","VAS_0","VAS_1"); //Array containing questionIDs to be queried
 
-//QuestionIDs minus default set. QIDS_0 - 11, ASRM_0 - 4, OTHER_0-1, VAS_0-8
-$fullQuestionArray = array(	"QIDS_1","QIDS_2","QIDS_3","QIDS_4","QIDS_5","QIDS_6","QIDS_7","QIDS_8","QIDS_9","QIDS_10","QIDS_11",
-							"ASRM_1","ASRM_2","ASRM_3","ASRM_4",
-							"OTHER_0","OTHER_1",
-							"VAS_1","VAS_2","VAS_3","VAS_4","VAS_5","VAS_6","VAS_7","VAS_8");
+//QuestionIDs minus default set.
+$fullQuestionArray = array(	"MC5_1","MC5_2","MC5_3","MC5_4","MC5_5","MC5_6","MC5_7","MC5_8","MC5_9","MC5_10","MC5_11","MC5_12","MC5_13","MC5_14",							
+							"VAS_2","VAS_3","VAS_4","VAS_5","VAS_6","VAS_7","VAS_8","VAS_9","VAS_10",
+							"VAS_11","VAS_12","VAS_13","VAS_14","VAS_15","VAS_16","VAS_17","VAS_18","VAS_19","VAS_20",
+							"VAS_21","VAS_22","VAS_23");
 							
-//QuestionIDs. QIDS_0 - 11, ASRM_0 - 4, OTHER_0-1, VAS_0-8
-$fullQuestionArray2 = array("QIDS_0", "QIDS_1","QIDS_2","QIDS_3","QIDS_4","QIDS_5","QIDS_6","QIDS_7","QIDS_8","QIDS_9","QIDS_10","QIDS_11",
-							"ASRM_0","ASRM_1","ASRM_2","ASRM_3","ASRM_4",
-							"OTHER_0","OTHER_1",
-							"VAS_0","VAS_1","VAS_2","VAS_3","VAS_4","VAS_5","VAS_6","VAS_7","VAS_8");
+//QuestionIDs.
+$fullQuestionArray2 = array("MC5_0","MC5_1","MC5_2","MC5_3","MC5_4","MC5_5","MC5_6","MC5_7","MC5_8","MC5_9","MC5_10","MC5_11","MC5_12","MC5_13","MC5_14",
+							"MC2_0",
+							"VAS_0","VAS_1","VAS_2","VAS_3","VAS_4","VAS_5","VAS_6","VAS_7","VAS_8","VAS_9","VAS_10",
+							"VAS_11","VAS_12","VAS_13","VAS_14","VAS_15","VAS_16","VAS_17","VAS_18","VAS_19","VAS_20",
+							"VAS_21","VAS_22","VAS_23");
 //-------------------------------------------------
 //Grab sessions
 $answerArray["id"] = "sessions";
