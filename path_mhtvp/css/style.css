@@ -2088,6 +2088,7 @@ div.swatchColumns {
   width: 100%;
   margin: 0.8em 0;
   padding-left: 62px;
+  min-height: 425px; /*This might have to change with question sets*/
   -moz-column-count: 4;
   -webkit-column-count: 4;
   column-count: 4;

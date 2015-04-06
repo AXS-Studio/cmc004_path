@@ -20,9 +20,10 @@ if ($result = $mysqli->query($q)){
 		$bus['name'] = $row['Description'];
 		
 		//Get question type
-		$arr = explode("_", $bus['name'], 2);
+		$arr = explode("_", $bus['id'], 2);
 		$questionType = $arr[0];
 		//Format question description
+		$arr = explode("_", $bus['name'], 2);
 		$bus['name'] = $arr[1];
 		
 		//Push into correct array
